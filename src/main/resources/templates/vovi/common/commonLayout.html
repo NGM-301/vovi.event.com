@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.utraq.net.nz.thymeleaf/layout">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="NGM_301" />
+<!-- 	<meta property="og:image" content="/resources/rs5/assets/img/repiaLogo.png" /> -->
+	<meta property="og:description" content="vovi 이벤트 페이지"/>
+
+	<style th:replace="vovi/common/fragments/style"></style>
+</head>
+
+<body>
+	<div th:replace="vovi/common/fragments/header"></div>
+	<main layout:fragment="content"></main>
+	<footer th:replace="vovi/common/fragments/footer"></footer>
+	<div th:replace="vovi/common/fragments/script"></div>
+	<div layout:fragment="script"></div>
+</body>
+</html>

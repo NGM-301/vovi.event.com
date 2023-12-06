@@ -5,12 +5,16 @@
  * 
  * 수정일				수정자			수정내용
  * -------------------------------------------------------
- * 2023-12-04		slaptear	최초 생성
+ * 2023-12-04		sgjang		최초 생성
  * 
- * author: slaptear
+ * author: sgjang
  * since 2023-12-04 MON
  */
-$(document).ready(function(){
-	console.log("어서오시와요");
-})
+$('#isOk').change(function() {
+	if ($(this).is(':checked')) {
+		$("#reviewEvent").show();
+	} else {
+		$("#reviewEvent").hide();
+	}
+});
 

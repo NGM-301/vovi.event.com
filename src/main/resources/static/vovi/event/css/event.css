@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-.test {
-	background-color: aqua;
-	height: 400px;
+#reviewEvent{
+	display: none;
 }

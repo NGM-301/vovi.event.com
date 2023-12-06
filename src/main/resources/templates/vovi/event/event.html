@@ -13,24 +13,72 @@
 <body>
 	<main layout:fragment="content">
 		<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-		<div class="container-xl px-4 customMaxWidth mb-4">
-			<div class="page-header-content pt-1">
-				<div class="row align-items-center justify-content-between">
-					<div class="col-auto mt-4">
-						<h1 class="page-header-title">
-							VOVIC&amp;E
-						</h1>
+			<div class="container-xl px-4 mb-4">
+				<div class="page-header-content pt-1">
+					<div class="row align-items-center justify-content-between">
+						<div class="col-auto mt-4">
+							<h1 class="page-header-title">
+								VOVIC&amp;E 리뷰 이벤트
+							</h1>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
 		
-		<div class="test">
-			<div class="input-group mb-3">
-				<span class="input-group-text" id="basic-addon1">@</span> <input
-					type="text" class="form-control" placeholder="Username"
-					aria-label="Username" aria-describedby="basic-addon1">
+		<div class="container-xl">
+			<div class="card mb-3">
+				<div class="card-header">
+					사용자 동의 부분
+				</div>
+				<div class="card-body">
+					
+					
+				</div>
+				<div class="card-footer">
+					<div class="form-check form-switch float-end">
+						<input class="form-check-input" type="checkbox" role="switch" id="isOk">
+						<label class="form-check-label" for="isOk">동의여부</label>
+					</div>
+				</div>
+			</div>
+			
+			<div id="reviewEvent">
+				<div class="card mb-3">
+					<div class="card-header">
+						사용자 정보
+					</div>
+					<div class="card-body">
+						
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="reviewer" placeholder="이름">
+							<label for="reviewer">이름</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="reviewPhoneNumber" placeholder="전화번호">
+							<label for="reviewPhoneNumber">전화번호</label>
+						</div>
+						
+					</div>
+					<div class="card-footer">
+						<button type="button" class="btn btn-outline-primary float-end">저장</button>
+					</div>
+				</div>
+				
+				<div class="card mb-3">
+					<div class="card-header">
+						리뷰 작성
+					</div>
+					<div class="card-body">
+						<div class="form-floating mb-3">
+							<textarea class="form-control" placeholder="리뷰 작성" id="reviewWrite" style="height: 400px"></textarea>
+							<label for="reviewWrite">리뷰 작성</label>
+						</div>
+					</div>
+					<div class="card-footer">
+						<button type="button" class="btn btn-outline-primary float-end">참여</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>

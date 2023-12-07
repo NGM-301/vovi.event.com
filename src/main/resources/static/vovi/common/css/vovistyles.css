@@ -15,3 +15,6 @@ body, .gmap-marker-wrap {font-family:Louis George Cafe, Poppins, Helvetica, Aria
 	display: none;
 }
 
+main {
+	min-height: 800px;
+}

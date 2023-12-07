@@ -10,11 +10,36 @@
  * author: sgjang
  * since 2023-12-04 MON
  */
-$('#isOk').change(function() {
-	if ($(this).is(':checked')) {
-		$("#reviewEvent").show();
-	} else {
-		$("#reviewEvent").hide();
+
+/*  변수  */
+
+
+
+/* 함수 */
+function fn_showAddressView(){
+	alert("test");
+}
+
+
+$('#reviewerInfoCard button').click(function() {
+	
+	$(this).addClass("saveReviewer");
+	
+	if ($(this).hasClass("saveReviewer")) {
+		$("#reviewEventCard").show();
 	}
 });
+
+$('#checkAgree').change(function() {
+	if ($(this).is(':checked')) {
+		$("#reviewerInfoCard").show();
+	} else {
+		$("#reviewerInfoCard").hide();
+		$("#reviewEventCard").hide();
+	}
+});
+
+
+
+/* 초기화 */
 

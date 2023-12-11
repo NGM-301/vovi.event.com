@@ -6,14 +6,14 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="java.sql" level="debug" additivity="false">
+        <Logger name="java.sql" level="INFO" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
         <!-- log SQL with timing information, post execution -->
-        <Logger name="jdbc.sqltiming" level="debug" additivity="false">
+        <Logger name="jdbc.sqltiming" level="INFO" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
-        <Logger name="org.springframework" level="debug" additivity="false">
+        <Logger name="org.springframework" level="INFO" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
 

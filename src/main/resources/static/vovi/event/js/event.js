@@ -14,8 +14,29 @@
 /*  변수  */
 
 
-
 /* 함수 */
+
+function fn_get(url, memberData, detail=null){
+	$.ajax({
+		url: contextPath + url,
+		contentType: "application/json",
+		method: "POST",
+		data: JSON.stringify(memberData),
+		success: function(response)
+		{
+			if(detail) {
+	
+			} else {
+				console.log(response);
+			} 
+		},
+		error: function(xhr)
+		{
+			
+		}
+	});
+}
+
 function fn_showAddressView(){
 	alert("test");
 }
@@ -42,4 +63,4 @@ $('#checkAgree').change(function() {
 
 
 /* 초기화 */
-
+fn_get("event/member", {userNm : "김선호", userTelNo: "010-0000-0000"});

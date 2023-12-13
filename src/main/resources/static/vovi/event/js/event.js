@@ -63,4 +63,4 @@ $('#checkAgree').change(function() {
 
 
 /* 초기화 */
-fn_get("event/member", {userNm : "김선호", userTelNo: "010-0000-0000"});
+//fn_get("event/member", {userNm : "김선호", userTelNo: "010-0000-0000"});

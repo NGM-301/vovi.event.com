@@ -5,6 +5,7 @@
 h1, h2, h3, h4, h5, h6, th, [class*="hint--"]:after {font-family:Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;}
 body, .gmap-marker-wrap {font-family:Louis George Cafe, Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;font-weight:400;}
 
+
 .branding__logo img{
 	padding: 15px 0px;
 	width: 170px;
@@ -15,6 +16,136 @@ body, .gmap-marker-wrap {font-family:Louis George Cafe, Poppins, Helvetica, Aria
 	display: none;
 }
 
+li {
+	list-style: none;
+}
+
+/* 스크롤바 css 개선 */
+.dataTables_scrollBody::-webkit-scrollbar, textarea::-webkit-scrollbar, div::-webkit-scrollbar {
+	width: 10px;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
+	background-color: #0080ff;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 2px solid transparent;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
+	background-color: #d4d4d4;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px #f1f1f1;
+}
+
+.headerLogo {
+	background-color: #ffffff;
+}
+
+.custom_contailner {
+	margin-left: 40px!important;
+}
+
+
+.sideNav {
+	float: left;
+}
+
+.sideNav_content {
+	float: left;
+}
+
+.sideNav_bar {
+	width: 240px;
+	position: fixed;
+	
+}
+
+nav  {
+	padding-top: 60px;
+	height: 100%;
+	padding-left: 20px;
+	margin-top: 68px;
+}
+
 main {
+	margin-left: 240px;
+	margin-top: 70px;
 	min-height: 800px;
+}
+
+footer {
+	margin-left: 240px;
+}
+
+@media (width <= 992px) {
+	.navbar-brand {
+		width: 100px !important;
+	}
+	.resposeIcon{
+		display: none;
+	}
+	.dropDiv {
+		display: none;
+	}
+}
+
+@media (width < 1000px){
+	.navBar {
+		margin-left: -80px!important;
+	}
+	.resposeIcon{
+		display: inline-block;
+	}
+	.dropDiv span{
+		display: none;
+	}
+	
+}
+
+@media (width >= 1000px) and (width < 1100px){
+	.navBar {
+		margin-left: -80px!important;
+	}
+	.resposeIcon{
+		display: none;
+	}
+	.dropDiv span{
+		display: inline-block;
+	}
+	
+}
+
+@media (width >= 1100px){
+	.resposeIcon{
+		display: none;
+	}
+	.dropDiv span{
+		display: inline-block;
+	}
+} 
+
+/* 반응형 재설정 */
+@media ( min-width : 768px) {
+	.container-md, .container-sm, .container {
+		max-width: 100%;
+	}
+}
+
+@media ( min-width : 992px) {
+	.container-lg, .container-md, .container-sm, .container {
+		max-width: 100%;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.container-xl, .container-lg, .container-md, .container-sm, .container {
+		max-width: 1140px;
+	}
+}
+
+@media ( min-width : 1500px) {
+	.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+		max-width: 1440px;
+	}
 }

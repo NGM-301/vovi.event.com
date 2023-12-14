@@ -12,7 +12,7 @@
  */
 
 /*  변수  */
-
+let btnCount = 0;
 
 /* 함수 */
 
@@ -42,12 +42,15 @@ function fn_showAddressView(){
 }
 
 
-$('#reviewerInfoCard button').click(function() {
-	
+$('#saveAndModBtn').click(function() {
+	btnCount = 1;
 	$(this).addClass("saveReviewer");
-	
+	$("#reviewerInfoCard input").attr("readonly",true);
 	if ($(this).hasClass("saveReviewer")) {
+		btnCount = 0;
 		$("#reviewEventCard").show();
+		$(this).removeClass('btn-outline-success').addClass('btn-outline-warning');
+		$(this).text("수정");
 	}
 });
 

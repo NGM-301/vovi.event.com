@@ -23,6 +23,11 @@ li {
 	background-color: #ffffff;
 }
 
+footer {
+	background-color: #ffffff;
+	height: 70px;
+}
+
 .menu-btn button{
 	margin-top: 13px;	
 }
@@ -56,7 +61,6 @@ nav  {
 main {
 	margin-left: 240px;
 	margin-top: 70px;
-	min-height: 800px;
 }
 
 @media (width <= 992px) {
@@ -69,28 +73,28 @@ main {
 	.menu-btn {
 		display: block!important;	
 	}
-	/* footer {
+	footer {
 		width: 100%!important; 
 		margin-left: 0px!important;
-	} */
+	}
 }
 
 @media (width < 1000px){
 	.menu-btn {
 		display: none;	
 	}
-	/* footer {
+	footer {
 		margin-left: 240px;
-	} */
+	}
 }
 
 @media (width >= 1000px) and (width < 1100px){
 	.menu-btn {
 		display: none;	
 	}
-	/* footer {
+	footer {
 		margin-left: 240px;
-	} */
+	}
 	
 }
 
@@ -98,9 +102,9 @@ main {
 	.menu-btn {
 		display: none;	
 	}
-	/* footer {
+	footer {
 		margin-left: 240px;
-	} */
+	}
 } 
 
 /* 반응형 재설정 */

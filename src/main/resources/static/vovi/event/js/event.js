@@ -41,34 +41,39 @@ function fn_showAddressView(){
 	alert("test");
 }
 
-function fn_toggleSaveBtn(){
-	$("#reviewEventCard").show();
+function fn_createModBtn(){
 	const MOD_BTN = `<button type="button" class="btn btn-outline-warning modBtn">수정</button>`;
+	$("#reviewEventCard").show();
+	$("#reviewEventCard").focus();
 	$("#reviewerInfoCard .saveBtn").remove();
 	$("#reviewerInfoCard .card-header").append(MOD_BTN);
 	$("#reviewerInfoCard input").attr("readOnly", true);
 }
 
-function fn_toggleModBtn(){
-	$("#reviewEventCard").hide();
+function fn_createSaveBtn(){
 	const SAVE_BTN = `<button type="button" class="btn btn-outline-success saveBtn">저장</button>`;
+	$("#reviewEventCard").hide();
 	$("#reviewerInfoCard .modBtn").remove();
 	$("#reviewerInfoCard input").attr("readOnly", false);
 	$("#reviewerInfoCard .card-header").append(SAVE_BTN);
 }
 
 $('#reviewerInfoCard').on('click', '.saveBtn', function() {
-	fn_toggleSaveBtn();
+	fn_createModBtn();
 });
 
 $('#reviewerInfoCard').on('click', '.modBtn', function() {
-	fn_toggleModBtn();
+	fn_createSaveBtn();
 });
 
-$('#checkAgree').change(function() {
-	if ($(this).is(':checked')) {
+$('#userAgreeCard').on('change', '#checkAgree', function() {
+	if ($("#checkAgree").is(':checked')) {
 		$("#reviewerInfoCard").show();
-		fn_toggleModBtn();
+		$("#reviewerInfoCard").focus();
+		fn_createSaveBtn();
+		if($("#reviewerInfoCard .saveBtn").length > 1){
+			$("#reviewerInfoCard .saveBtn")[0].remove();
+		}
 	} else {
 		$("#reviewerInfoCard").hide();
 		$("#reviewEventCard").hide();

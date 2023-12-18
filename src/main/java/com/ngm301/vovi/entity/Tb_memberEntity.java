@@ -1,4 +1,4 @@
-package com.ngm301.vovi.event.entity;
+package com.ngm301.vovi.entity;
 
 import java.time.LocalDateTime;
 

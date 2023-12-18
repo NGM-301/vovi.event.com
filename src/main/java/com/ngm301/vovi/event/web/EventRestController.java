@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ngm301.vovi.event.entity.dto.MemberDto;
+import com.ngm301.vovi.entity.dto.MemberDto;
 import com.ngm301.vovi.event.service.EventService;
 
 @RequestMapping(value = "event")

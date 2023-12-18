@@ -10,4 +10,5 @@ public class EventController {
 	public String eventPage() {
 		return "vovi/event/event";
 	}
+
 }

@@ -2,8 +2,8 @@ package com.ngm301.vovi.event.service;
 
 import org.springframework.stereotype.Service;
 
-import com.ngm301.vovi.event.entity.Tb_memberEntity;
-import com.ngm301.vovi.event.entity.dto.MemberDto;
+import com.ngm301.vovi.entity.Tb_memberEntity;
+import com.ngm301.vovi.entity.dto.MemberDto;
 
 import lombok.extern.log4j.Log4j2;
 

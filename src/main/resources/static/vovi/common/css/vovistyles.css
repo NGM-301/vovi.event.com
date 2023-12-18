@@ -36,7 +36,11 @@ nav  {
 	padding-top: 60px;
 	height: 100%;
 	padding-left: 20px;
+	padding-right: 20px;
 	margin-top: 68px;
+}
+
+nav a {
 }
 
 .sideNav {
@@ -52,6 +56,19 @@ nav  {
 	width: 240px;
 	position: fixed;
 	
+}
+
+.navLink:focus, .navLink:hover {
+	color: #0a58ca!important;
+}
+
+.active {
+	border-bottom: 3px solid #0d62fd1f;
+
+}
+.active button {
+	color: #0061F2 !important;
+	font-weight: bold;
 }
 
 #menuOffcanvas {
@@ -147,6 +164,12 @@ main {
 		max-width: 1440px!important;
 	}
 }
+
+
+/* .gnbActive {
+	border-bottom: 3px solid #0061F2;
+	color: #0061F2 !important;
+} */
 
 
 /* 스크롤바 css 개선 */

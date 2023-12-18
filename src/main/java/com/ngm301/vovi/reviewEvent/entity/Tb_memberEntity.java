@@ -1,4 +1,4 @@
-package com.ngm301.vovi.entity;
+package com.ngm301.vovi.reviewEvent.entity;
 
 import java.time.LocalDateTime;
 

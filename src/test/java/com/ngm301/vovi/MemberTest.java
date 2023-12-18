@@ -6,17 +6,17 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.ngm301.vovi.event.service.EventService;
-import com.ngm301.vovi.event.service.Tb_memberRepository;
+import com.ngm301.vovi.reviewEvent.attendEvent.service.AttendEventService;
+import com.ngm301.vovi.reviewEvent.repo.ReviewEventRepository;
 @ExtendWith(MockitoExtension.class)
 class MemberTest {
-	private EventService eventService;
+	private AttendEventService eventService;
 	@Mock
-	private Tb_memberRepository tb_memberRepository;
+	private ReviewEventRepository reviewEventRepository;
 
 	@Test
 	void test() {
-		eventService = new EventService(tb_memberRepository);
+		eventService = new AttendEventService(reviewEventRepository);
 		//eventService.save();
 	}
 

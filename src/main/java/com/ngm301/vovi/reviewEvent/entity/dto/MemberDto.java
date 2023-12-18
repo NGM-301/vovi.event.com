@@ -1,4 +1,4 @@
-package com.ngm301.vovi.entity.dto;
+package com.ngm301.vovi.reviewEvent.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

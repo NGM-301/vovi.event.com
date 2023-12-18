@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.utraq.net.nz.thymeleaf/layout"
+	layout:decorate="~{vovi/common/commonLayout}">
+<head>
+
+	<meta name="description" content="VOVIC&E 이벤트 페이지"/>
+	<title>VOVIC&amp;E 리뷰 이벤트</title>
+	<link rel="stylesheet" href="/resources/vovi/reviewEvent/css/reviewEvent.css">
+</head>
+
+<body>
+	<main layout:fragment="content">
+		<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+			<div class="container-xl px-4 mb-4">
+				<div class="page-header-content pt-1">
+					<div class="row align-items-center justify-content-between">
+						<div class="col-auto mt-4">
+							<h1 class="page-header-title">
+								이벤트 당첨자
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+			
+	</main>
+</body>
+<!-- 스크립트 -->
+<th:block layout:fragment="script">
+	<script src="/resources/vovi/reviewEvent/js/confirmWinner.js" crossorigin="anonymous"></script>
+</th:block>
+</html>

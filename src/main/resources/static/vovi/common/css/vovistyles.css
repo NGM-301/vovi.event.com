@@ -40,9 +40,6 @@ nav  {
 	margin-top: 68px;
 }
 
-nav a {
-}
-
 .sideNav {
 	float: left;
 	width: 100%;
@@ -128,49 +125,47 @@ main {
 
 @media (min-width: 576px){
 	.container, .container-sm {
-		max-width: 450px!important;
+		max-width: 100%!important;
 	}
 }
 
 @media ( min-width : 768px) {
 	.custom_contailner {
-		margin-left: 70px!important;
+		margin:0 0!important;
 	}
 	.container-md, .container-sm, .container {
-		max-width: 750px!important;
+		max-width: 100%!important;
 	}
 }
 
 @media ( min-width : 992px) {
 	.container-lg, .container-md, .container-sm, .container {
-		max-width: 800px!important;
+		max-width: 100%!important;
 	}
 }
 
 @media ( min-width : 1200px) {
 	.custom_contailner {
-		margin-left: 40px!important;
+		margin:0 40px!important;
+		padding-left: 40px;
 	}
 	.container-xl, .container-lg, .container-md, .container-sm, .container {
-		max-width: 950px!important;
+		max-width: 880px!important;
 	}
 }
 
 @media ( min-width : 1500px) {
 	.custom_contailner {
-		margin-left: 40px!important;
+		margin-left: 80px!important;
+		margin-right: 240px!important;
 	}
 	.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
 		max-width: 1440px!important;
 	}
+	main {
+		margin-right: 240px;
+	}
 }
-
-
-/* .gnbActive {
-	border-bottom: 3px solid #0061F2;
-	color: #0061F2 !important;
-} */
-
 
 /* 스크롤바 css 개선 */
 .dataTables_scrollBody::-webkit-scrollbar, textarea::-webkit-scrollbar, div::-webkit-scrollbar {

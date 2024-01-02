@@ -5,6 +5,10 @@
 h1, h2, h3, h4, h5, h6, th, [class*="hint--"]:after {font-family:Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;}
 body, .gmap-marker-wrap {font-family:Louis George Cafe, Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;font-weight:400;}
 
+body {
+	height: 100%;
+}
+
 li {
 	list-style: none;
 }
@@ -32,27 +36,26 @@ footer {
 	margin-top: 13px;	
 }
 
-nav  {
-	padding-top: 60px;
+nav {
 	height: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
-	margin-top: 68px;
+}
+
+.sideNav_content {
+	margin-top: 70px;
 }
 
 .sideNav {
-	float: left;
 	width: 100%;
 }
 
 .sideNav_content {
-	float: left;
 }
 
 .sideNav_bar {
 	width: 240px;
 	position: fixed;
-	
 }
 
 .navLink:focus, .navLink:hover {
@@ -74,7 +77,6 @@ nav  {
 
 main {
 	margin-left: 240px;
-	margin-top: 70px;
 }
 
 @media (width <= 992px) {
@@ -83,6 +85,7 @@ main {
 	}
 	main {
 		margin-left: 0px;
+		width: 100%;
 	}
 	.menu-btn {
 		display: block!important;	
@@ -106,6 +109,9 @@ main {
 	.menu-btn {
 		display: none;	
 	}
+	main {
+		width: 75%;
+	}
 	footer {
 		margin-left: 240px;
 	}
@@ -115,6 +121,9 @@ main {
 @media (width >= 1100px){
 	.menu-btn {
 		display: none;	
+	}
+	main {
+		width: 80%;
 	}
 	footer {
 		margin-left: 240px;
@@ -131,7 +140,7 @@ main {
 
 @media ( min-width : 768px) {
 	.custom_contailner {
-		margin:0 0!important;
+		padding-right: 20px!important;
 	}
 	.container-md, .container-sm, .container {
 		max-width: 100%!important;
@@ -140,30 +149,22 @@ main {
 
 @media ( min-width : 992px) {
 	.container-lg, .container-md, .container-sm, .container {
-		max-width: 100%!important;
+		max-width: 95%!important;
 	}
 }
 
 @media ( min-width : 1200px) {
-	.custom_contailner {
-		margin:0 40px!important;
-		padding-left: 40px;
-	}
 	.container-xl, .container-lg, .container-md, .container-sm, .container {
-		max-width: 880px!important;
+		max-width: 1060px!important;
 	}
 }
 
 @media ( min-width : 1500px) {
 	.custom_contailner {
-		margin-left: 80px!important;
-		margin-right: 240px!important;
+		padding-left: 70px!important;
 	}
 	.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
 		max-width: 1440px!important;
-	}
-	main {
-		margin-right: 240px;
 	}
 }
 

@@ -5,7 +5,7 @@
 h1, h2, h3, h4, h5, h6, th, [class*="hint--"]:after {font-family:Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;}
 body, .gmap-marker-wrap {font-family:Louis George Cafe, Poppins, Helvetica, Arial, Open Sans, Noto Sans KR, sans-serif;font-weight:400;}
 
-body {
+html, body {
 	height: 100%;
 }
 
@@ -48,6 +48,7 @@ nav {
 
 .sideNav {
 	width: 100%;
+	min-height: calc(100vh - 70px);
 }
 
 .sideNav_content {

@@ -42,7 +42,8 @@ dependencies {
 	
 	// DB
 	//runtimeOnly 'org.postgresql:postgresql'
-	implementation 'mysql:mysql-connector-java:8.0.28'
+	//implementation 'mysql:mysql-connector-java:8.0.28'
+	implementation 'org.postgresql:postgresql:42.6.0'
 	implementation 'org.hibernate:hibernate-core:5.5.4.Final'
 
 	// webjars

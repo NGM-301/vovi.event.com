@@ -25,22 +25,18 @@ function fn_callAddressApi(){
 	}).open();
 }
 
-function fn_get(url, memberData, detail=null){
+function fn_post(url, data=null){
+	console.log(contextPath + url);
+	console.log(data);
 	$.ajax({
 		url: contextPath + url,
-		contentType: "application/json",
-		method: "POST",
-		data: JSON.stringify(memberData),
-		success: function(response)
-		{
-			if(detail) {
-	
-			} else {
-				console.log(response);
-			} 
+		contentType: APPLICATION_JSON,
+		method: POST,
+		data: JSON.stringify(data),
+		success: function(response){
+			console.log(response)
 		},
-		error: function(xhr)
-		{
+		error: function(xhr){
 			
 		}
 	});
@@ -71,8 +67,18 @@ function fn_createSaveBtn(){
 }
 
 $('#reviewerInfoCard').on('click', '.saveBtn', function() {
+	// 모든 정보와 이메일 인증, 우편번호 찾기 해야 저장 가능
+	// 수정 누르면 이메일 인증은 작동 x
+	let data = {
+		userNm : $("#reviewer").val(),
+		userTelNo: $("#reviewerPhoneNum").val(),
+		userEmlAddr : $("#reviewerEmail").val(),
+		userAddr : $("#reviewPostCode").val()+ ", " + $("#reviewAddress").val() +", "+ $("#reviewDetailAddress").val()
+	};
+	
 	modalConfirm("저장하시겠습니까?").then((result) => {
 		if (result) {
+			fn_post("review-event/attend-event", data);
 			fn_createModBtn();
 			modalAlert("저장되었습니다.");
 			$(".customAlert").on("click", function(){
@@ -111,10 +117,12 @@ $('#userAgreeCard').on('change', '#checkAgree', function() {
 });
 
 $("#intermediateSave").click(function (){
+	
 	modalAlert("저장되었습니다.");
 })
 
 $("#eventParticipation").click(function (){
+	
 	modalAlert("참여 완료되었습니다. 소중한 리뷰 감사합니다.");
 })
 

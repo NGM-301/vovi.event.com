@@ -11,18 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ngm301.vovi.reviewEvent.attendEvent.service.AttendEventService;
 import com.ngm301.vovi.reviewEvent.entity.dto.MemberDto;
 
-@RequestMapping(value = "event")
 @RestController
+@RequestMapping(value = "/review-event")
 public class AttendEventRestController {
 
 	@Autowired
 	AttendEventService eventService;
 	
-	@PostMapping(value = "/member")
+//	@PostMapping(value = "/member")
+//	public ResponseEntity<MemberDto.SavingDto> save(@RequestBody MemberDto.SavingDto savingDto) {
+//		System.out.println("들어옴");
+//		System.out.println(savingDto);
+//		eventService.save(savingDto);
+//		return ResponseEntity.ok().body(savingDto);
+//	}
+	
+	@PostMapping(value = "/attend-event")
 	public ResponseEntity<MemberDto.SavingDto> save(@RequestBody MemberDto.SavingDto savingDto) {
 		System.out.println("들어옴");
 		System.out.println(savingDto);
-		eventService.save(savingDto);
+		//eventService.save(savingDto);
 		return ResponseEntity.ok().body(savingDto);
 	}
+	
 }

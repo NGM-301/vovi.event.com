@@ -17,10 +17,10 @@ public class MemberDto {
 	@ToString
 	public static class SavingDto {
 		private String userNm;
-//		private String userAddr;
-//		private String rrNo;
 		private String userTelNo;
-//		private String userEmlAddr;
+		private String userEmlAddr;
+		private String userAddr;
+		//private String rrNo;
 	}
 
 }

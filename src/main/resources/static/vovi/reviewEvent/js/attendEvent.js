@@ -97,6 +97,7 @@ $('#reviewerInfoCard').on('click', '.modBtn', function() {
 
 $('#userAgreeCard').on('change', '#checkAgree', function() {
 	if ($("#checkAgree").is(':checked')) {
+		
 		$("#reviewerInfoCard").show();
 		$("#reviewerInfoCard").focus();
 		fn_createSaveBtn();

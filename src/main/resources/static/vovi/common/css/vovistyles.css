@@ -77,6 +77,10 @@ nav {
 	width: 240px; 
 }
 
+.offcanvas-header {
+	border-bottom: 1px solid #dee2e6!important;
+}
+
 main {
 	margin-left: 240px;
 }

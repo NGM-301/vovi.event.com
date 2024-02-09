@@ -1,31 +1,34 @@
 package com.ngm301.vovi.reviewEvent.attendEvent.service;
 
+import java.time.LocalDateTime;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import com.ngm301.vovi.reviewEvent.entity.Tb_memberEntity;
 import com.ngm301.vovi.reviewEvent.entity.dto.MemberDto;
 import com.ngm301.vovi.reviewEvent.repo.ReviewEventRepository;
 
-import lombok.extern.log4j.Log4j2;
-
 @Service
-@Log4j2
 public class AttendEventService {
 	
 	private final ReviewEventRepository reviewEventRepository;
-
-	public AttendEventService(ReviewEventRepository reviewEventRepository) {
+	private final ModelMapper modelMapper;
+	
+	public AttendEventService(ReviewEventRepository reviewEventRepository, ModelMapper modelMapper) {
 		this.reviewEventRepository = reviewEventRepository;
+		this.modelMapper = modelMapper;
 	}
 
 	public void save(MemberDto.SavingDto savingDto) {
-		Tb_memberEntity tb_memberEntity = new Tb_memberEntity();
-		tb_memberEntity.setUserNo("1");
-		tb_memberEntity.setGroupNo(1);
-		tb_memberEntity.setUserNm(savingDto.getUserNm());
-		tb_memberEntity.setUserNm(savingDto.getUserTelNo());
-		System.out.println(tb_memberEntity);
-		reviewEventRepository.save(tb_memberEntity);
+		Tb_memberEntity tb_memberEntity = modelMapper.map(savingDto, Tb_memberEntity.class);
+		tb_memberEntity.setGroupNum(1);
+		tb_memberEntity.setUserLang("ko");
+		tb_memberEntity.setDeleteYN('N');
+		tb_memberEntity.setCreatedDate(LocalDateTime.now());
+		tb_memberEntity.setUpdateDate(LocalDateTime.now());
+		tb_memberEntity.setExpiredDate(LocalDateTime.now());
+		this.reviewEventRepository.save(tb_memberEntity);
 	}
 
 }

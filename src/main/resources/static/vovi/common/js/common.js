@@ -312,6 +312,9 @@ function setModalFooter(footerDiv, buttonOptrions){
 }
 /* modal 동적 생성 끝 */
 
+function beforeWinnerConfirm(){
+	modalAlert("이벤트 당첨자를 추첨하기 전입니다.");
+}
 
 window.addEventListener("load", addActiveLnbArea);
 window.addEventListener("resize", addActiveLnbArea);

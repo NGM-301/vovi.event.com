@@ -54,6 +54,7 @@ dependencies {
 	implementation 'org.webjars:jquery:3.6.3'
 	implementation 'org.webjars:jquery-ui:1.13.2'
 
+	implementation 'org.modelmapper:modelmapper:3.1.1'
 	annotationProcessor 'org.projectlombok:lombok'
 	
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'

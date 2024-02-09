@@ -43,7 +43,7 @@
 								보비씨엔이주식회사는 제품출시10주년 기념 이벤트를 실시하고자, 아래와 같이 개인정보를 수집.이용합니다.
 							</li>
 							<li>
-								1. 수집 항목 : 이름, 전화번호, 주소, 주민등록번호   
+								1. 수집 항목 : 이름, 전화번호, 이메일, 주소   
 							</li>
 							<li>
 								2. 수집 이용 목적 :고객감사이벤트 지원 및 사은품(경품) 확정 등 의사소통 경로, 이벤트지원자 식별 및 본인 여부 확인, 수다캘럭시 관련
@@ -73,7 +73,7 @@
 							<label for="reviewer" class="form-label">
 								이름
 							</label>
-							<input type="text" class="form-control" id="reviewer" required>
+							<input type="text" class="form-control" id="reviewer" placeholder="예) 홍길동" required>
 						</div>
 					</div>
 					<div class="row">
@@ -88,8 +88,8 @@
 								이메일
 							</label>
 							<div class="input-group">
-								<input type="email" class="form-control" id="reviewerEmail" required>
-								<button class="btn btn-outline-secondary" type="button" id="authEmailBtn">이메일인증</button>
+								<input type="email" class="form-control" id="reviewerEmail" required placeholder="예) email@email.com">
+<!-- 								<button class="btn btn-outline-secondary" type="button" id="authEmailBtn">이메일인증</button> -->
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 								우편번호
 							</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="reviewPostCode" required>
+								<input type="number" class="form-control" id="reviewPostCode" required>
 								<button class="btn btn-outline-secondary" type="button" id="findPostCodeBtn">우편번호찾기</button>
 							</div>
 						</div>	
@@ -137,8 +137,8 @@
 				</div>
 				<div class="card-body">
 					<div class="form-floating mb-3">
-						<textarea class="form-control" placeholder="리뷰" id="reviewWrite"></textarea>
-						<label for="reviewWrite">리뷰</label>
+						<textarea class="form-control" placeholder="리뷰 작성란" id="reviewWrite"></textarea>
+						<label for="reviewWrite">리뷰 작성란</label>
 					</div>
 				</div>
 			</div>

@@ -71,9 +71,11 @@ $('#reviewerInfoCard').on('click', '.saveBtn', function() {
 	// 수정 누르면 이메일 인증은 작동 x
 	let data = {
 		userNm : $("#reviewer").val(),
-		userTelNo: $("#reviewerPhoneNum").val(),
+		userTelNum: $("#reviewerPhoneNum").val(),
 		userEmlAddr : $("#reviewerEmail").val(),
-		userAddr : $("#reviewPostCode").val()+ ", " + $("#reviewAddress").val() +", "+ $("#reviewDetailAddress").val()
+		postNum : $("#reviewPostCode").val(),
+		userAddr : $("#reviewAddress").val(),
+		detailAddr : $("#reviewDetailAddress").val()
 	};
 	
 	modalConfirm("저장하시겠습니까?").then((result) => {
@@ -128,16 +130,16 @@ $("#eventParticipation").click(function (){
 
 $("#reviewer").on("input", function () {
 	let reviewer = $("#reviewer").val();
-	reviewer = reviewer.replace(/[0-9]/g, '');
+	reviewer = reviewer.replace(/[0-9]/g, "");
 	$(this).val(reviewer);
 })
 
 $("#reviewerPhoneNum").on("input", function () {
 	let phoneNum = $("#reviewerPhoneNum").val();
-	phoneNum = phoneNum.replace(/[^\d]/g, '');
+	phoneNum = phoneNum.replace(/[^\d]/g, "");
 	
 	if (phoneNum.length >= 4) {
-		phoneNum = phoneNum.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+		phoneNum = phoneNum.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
 	}
 	
 	if (phoneNum.length > 13) {
@@ -149,7 +151,7 @@ $("#reviewerPhoneNum").on("input", function () {
 
 $("#reviewerEmail").on("input", function () {
 	let reviewerEmail = $("#reviewerEmail").val();
-	reviewerEmail = reviewerEmail.replace(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, '');
+//	reviewerEmail = reviewerEmail.replace(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, '');
 	$(this).val(reviewerEmail);
 })
 

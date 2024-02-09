@@ -30,7 +30,7 @@ public class AttendEventRestController {
 	public ResponseEntity<MemberDto.SavingDto> save(@RequestBody MemberDto.SavingDto savingDto) {
 		System.out.println("들어옴");
 		System.out.println(savingDto);
-		//eventService.save(savingDto);
+		eventService.save(savingDto);
 		return ResponseEntity.ok().body(savingDto);
 	}
 	

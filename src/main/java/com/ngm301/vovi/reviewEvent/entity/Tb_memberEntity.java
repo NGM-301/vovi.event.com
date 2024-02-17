@@ -29,9 +29,9 @@ import lombok.ToString;
 @DynamicInsert
 public class Tb_memberEntity {
 	@Id
-	@Column(name = "USER_NUM", nullable = false, length = 10)
+	@Column(name = "USER_ID", nullable = false, length = 10)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long userNum;
+	private Long userId;
 
 	@Column(name = "GROUP_NUM", nullable = false)
 	private Integer groupNum;
@@ -69,7 +69,7 @@ public class Tb_memberEntity {
 	@Column(name = "DELETE_YN", length = 1, nullable = false)
 	private char deleteYN;
 
-	@Column(name = "USER_TELNO_INDEX", unique = true)
-	private String userTelNoIndex;
+	//@Column(name = "USER_TELNO_INDEX", unique = true)
+	//private String userTelNoIndex;
 
 }

@@ -6,19 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class MemberDto {
-
-	private String userNm;
-	private String userTelNum;
-	private String userEmlAddr;
-	private Integer postNum;
-	private String userAddr;
-	private String detailAddr;
-	
+public class ReviewDto {
+	private String review;
 }

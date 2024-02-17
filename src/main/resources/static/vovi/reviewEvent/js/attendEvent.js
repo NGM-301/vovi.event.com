@@ -26,18 +26,16 @@ function fn_callAddressApi(){
 }
 
 function fn_post(url, data=null){
-	console.log(contextPath + url);
-	console.log(data);
 	$.ajax({
 		url: contextPath + url,
 		contentType: APPLICATION_JSON,
 		method: POST,
 		data: JSON.stringify(data),
 		success: function(response){
-			console.log(response)
+			modalAlert("참여 완료되었습니다. 소중한 리뷰 감사합니다.");
 		},
 		error: function(xhr){
-			
+			modalAlert("등록에 실패하였습니다. 다시 시도해 주세요.");
 		}
 	});
 }
@@ -108,10 +106,11 @@ $('#userAgreeCard').on('change', '#checkAgree', function() {
 		
 		$("#reviewerInfoCard").show();
 		$("#reviewerInfoCard").focus();
-		fn_createSaveBtn();
-		if($("#reviewerInfoCard .saveBtn").length > 1){
-			$("#reviewerInfoCard .saveBtn")[0].remove();
-		}
+		$("#reviewEventCard").show();
+		//fn_createSaveBtn();
+		//if($("#reviewerInfoCard .saveBtn").length > 1){
+		//	$("#reviewerInfoCard .saveBtn")[0].remove();
+		//}
 	} else {
 		$("#reviewerInfoCard").hide();
 		$("#reviewEventCard").hide();
@@ -125,7 +124,69 @@ $("#intermediateSave").click(function (){
 
 $("#eventParticipation").click(function (){
 	
-	modalAlert("참여 완료되었습니다. 소중한 리뷰 감사합니다.");
+	const $userNm = $("#reviewer");
+	const $userTelNum = $("#reviewerPhoneNum");
+	const $userEmlAddr = $("#reviewerEmail");
+	const $postNum = $("#reviewPostCode");
+	const $userAddr = $("#reviewAddress");
+	const $detailAddr = $("#reviewDetailAddress");
+	const $review = $("#reviewWrite");
+	/*
+	if(!$userNm.val().trim()){
+		modalAlert("이름을 작성해주세요.");
+		$userNm.focus();
+	}
+	
+	if(!$userTelNum.val()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$userTelNum.focus();
+	}
+	
+	if(!$userEmlAddr.val().trim()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$userEmlAddr.focus();
+	}
+	
+	if(!$postNum.val().trim()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$postNum.focus();
+	}
+	
+	if(!$userAddr.val().trim()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$userAddr.focus();
+	}
+	
+	if(!$detailAddr.val().trim()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$detailAddr.focus();
+	}
+	
+	if(!$review.val().trim()){
+		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		$review.focus();
+	}
+	*/
+	modalConfirm("작성된 내용을 바탕으로 리뷰 이벤트에 참여 하시겠습니까?").then((result) => {
+		if (result) {
+			let data = {
+				memberDto : {
+					userNm : $userNm.val().trim(),
+					userTelNum: $userTelNum.val(),
+					userEmlAddr : $userEmlAddr.val().trim(),
+					postNum : $postNum.val().trim(),
+					userAddr : $userAddr.val().trim(),
+					detailAddr : $detailAddr.val().trim()
+				},
+				reviewDto : {
+					review : $review.val().trim()
+				}
+			};
+			fn_post("review-event/attend-event", data);
+		}else{
+			modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+		}
+	});
 })
 
 $("#reviewer").on("input", function () {

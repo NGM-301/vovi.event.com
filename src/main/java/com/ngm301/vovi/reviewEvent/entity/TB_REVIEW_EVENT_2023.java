@@ -31,7 +31,7 @@ public class TB_REVIEW_EVENT_2023 {
 
 	@Id
 	@Column(name = "REVIEW_ID", nullable = false, length = 10)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long reviewId;
 
 	@Column(name = "USER_ID", nullable = false, length = 10)

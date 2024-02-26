@@ -27,6 +27,7 @@ public class AttendEventService {
 	}
 
 	public void save(MemberDto memberDto, ReviewDto reviewDto) {
+		
 		Tb_memberEntity tb_memberEntity = modelMapper.map(memberDto, Tb_memberEntity.class);
 		tb_memberEntity.setGroupNum(1);
 		tb_memberEntity.setUserLang("ko");

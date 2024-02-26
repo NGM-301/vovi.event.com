@@ -24,13 +24,14 @@ import lombok.ToString;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "TB_MEMBER")
 @ToString
 @DynamicInsert
+@Table(name = "TB_MEMBER")
 public class Tb_memberEntity {
+	
 	@Id
 	@Column(name = "USER_ID", nullable = false, length = 10)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
 
 	@Column(name = "GROUP_NUM", nullable = false)

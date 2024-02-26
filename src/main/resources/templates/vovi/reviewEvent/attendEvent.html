@@ -56,8 +56,11 @@
 								4. 보유기간 : 이벤트 지원일로부터 3년 보관후 파기 
 							</li>
 							<li>
-								5. 동의를 거부할 권리가 있으며, 동의를 거부할 경우 본 감사 이벤트와 관련하여 제한이 있을 수 있습니다 .
+								5. 동의를 거부할 권리가 있으며, 동의를 거부할 경우 본 감사 이벤트와 관련하여 제한이 있을 수 있습니다.
 							</li>
+<!-- 							<li> -->
+<!-- 								6. 중복 작성 시 마지막에 작성한 것으로 채택됩니다. -->
+<!-- 							</li> -->
 						</ul>
 					</div>
 				</div>
@@ -73,7 +76,7 @@
 							<label for="reviewer" class="form-label">
 								이름
 							</label>
-							<input type="text" class="form-control" id="reviewer" placeholder="예) 홍길동" required>
+							<input type="text" class="form-control" id="reviewer" placeholder="예) 김보비" required>
 						</div>
 					</div>
 					<div class="row">
@@ -88,7 +91,7 @@
 								이메일
 							</label>
 							<div class="input-group">
-								<input type="email" class="form-control" id="reviewerEmail" required placeholder="예) email@email.com">
+								<input type="email" class="form-control" id="reviewerEmail" required placeholder="예) vovi@email.com">
 <!-- 								<button class="btn btn-outline-secondary" type="button" id="authEmailBtn">이메일인증</button> -->
 							</div>
 						</div>
@@ -99,7 +102,7 @@
 								우편번호
 							</label>
 							<div class="input-group">
-								<input type="number" class="form-control" id="reviewPostCode" required>
+								<input type="number" class="form-control" id="reviewPostCode" required min="0">
 								<button class="btn btn-outline-secondary" type="button" id="findPostCodeBtn">우편번호찾기</button>
 							</div>
 						</div>	

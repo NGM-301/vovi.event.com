@@ -137,7 +137,6 @@ main {
 } 
 
 /* 반응형 재설정 */
-
 @media (min-width: 576px){
 	.container, .container-sm {
 		max-width: 100%!important;

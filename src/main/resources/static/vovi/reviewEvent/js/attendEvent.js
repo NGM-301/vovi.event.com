@@ -19,8 +19,10 @@ let btnCount = 0;
 function fn_callAddressApi(){
 	new daum.Postcode({
 		oncomplete: function(data) {
-			// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-			// 예제를 참고하여 다양한 활용법을 확인해 보세요.
+			$("#reviewPostCode").val(data.zonecode);
+			//$("#reviewPostCode").attr("readonly",true); 
+			$("#reviewAddress").val(data.address);
+			//$("#reviewAddress").attr("readonly",true); 
 		}
 	}).open();
 }
@@ -44,54 +46,54 @@ function fn_showAddressView(){
 	alert("test");
 }
 
-function fn_createModBtn(){
-	const MOD_BTN = `<button type="button" class="btn btn-outline-warning modBtn">수정</button>`;
-	/*$("#reviewEventCard").show();
-	$("#reviewEventCard").focus();*/
-	$("#reviewerInfoCard .saveBtn").remove();
-	$("#reviewerInfoCard .card-header").append(MOD_BTN);
-	$("#reviewerInfoCard input").prop("readOnly", true);
-	$("#findPostCodeBtn").prop("disabled", true);
-}
+//function fn_createModBtn(){
+//	const MOD_BTN = `<button type="button" class="btn btn-outline-warning modBtn">수정</button>`;
+//	/*$("#reviewEventCard").show();
+//	$("#reviewEventCard").focus();*/
+//	$("#reviewerInfoCard .saveBtn").remove();
+//	$("#reviewerInfoCard .card-header").append(MOD_BTN);
+//	$("#reviewerInfoCard input").prop("readOnly", true);
+//	$("#findPostCodeBtn").prop("disabled", true);
+//}
+//
+//function fn_createSaveBtn(){
+//	const SAVE_BTN = `<button type="button" class="btn btn-outline-success saveBtn">저장</button>`;
+//	$("#reviewEventCard").hide();
+//	$("#reviewerInfoCard .modBtn").remove();
+//	$("#reviewerInfoCard .card-header").append(SAVE_BTN);
+//	$("#reviewerInfoCard input").prop("readOnly", false);
+//	$("#findPostCodeBtn").prop("disabled", false);
+//	$("#findPostCodeBtn").off("click", fn_showAddressView).on("click", fn_showAddressView);
+//}
 
-function fn_createSaveBtn(){
-	const SAVE_BTN = `<button type="button" class="btn btn-outline-success saveBtn">저장</button>`;
-	$("#reviewEventCard").hide();
-	$("#reviewerInfoCard .modBtn").remove();
-	$("#reviewerInfoCard .card-header").append(SAVE_BTN);
-	$("#reviewerInfoCard input").prop("readOnly", false);
-	$("#findPostCodeBtn").prop("disabled", false);
-	$("#findPostCodeBtn").off("click", fn_showAddressView).on("click", fn_showAddressView);
-}
+//$('#reviewerInfoCard').on('click', '.saveBtn', function() {
+//	// 모든 정보와 이메일 인증, 우편번호 찾기 해야 저장 가능
+//	// 수정 누르면 이메일 인증은 작동 x
+//	let data = {
+//		userNm : $("#reviewer").val(),
+//		userTelNum: $("#reviewerPhoneNum").val(),
+//		userEmlAddr : $("#reviewerEmail").val(),
+//		postNum : $("#reviewPostCode").val(),
+//		userAddr : $("#reviewAddress").val(),
+//		detailAddr : $("#reviewDetailAddress").val()
+//	};
+//	
+//	modalConfirm("저장하시겠습니까?").then((result) => {
+//		if (result) {
+//			fn_post("review-event/attend-event", data);
+//			fn_createModBtn();
+//			modalAlert("저장되었습니다.");
+//			$(".customAlert").on("click", function(){
+//				$("#reviewEventCard").show();
+//				$("#reviewEventCard").focus();
+//			})
+//		}else{
+//			modalAlert("저장이 취소되었습니다.");
+//		}
+//	});
+//});
 
-$('#reviewerInfoCard').on('click', '.saveBtn', function() {
-	// 모든 정보와 이메일 인증, 우편번호 찾기 해야 저장 가능
-	// 수정 누르면 이메일 인증은 작동 x
-	let data = {
-		userNm : $("#reviewer").val(),
-		userTelNum: $("#reviewerPhoneNum").val(),
-		userEmlAddr : $("#reviewerEmail").val(),
-		postNum : $("#reviewPostCode").val(),
-		userAddr : $("#reviewAddress").val(),
-		detailAddr : $("#reviewDetailAddress").val()
-	};
-	
-	modalConfirm("저장하시겠습니까?").then((result) => {
-		if (result) {
-			fn_post("review-event/attend-event", data);
-			fn_createModBtn();
-			modalAlert("저장되었습니다.");
-			$(".customAlert").on("click", function(){
-				$("#reviewEventCard").show();
-				$("#reviewEventCard").focus();
-			})
-		}else{
-			modalAlert("저장이 취소되었습니다.");
-		}
-	});
-});
-
-$('#reviewerInfoCard').on('click', '.modBtn', function() {
+/*$('#reviewerInfoCard').on('click', '.modBtn', function() {
 	modalConfirm(`<p>수정하시겠습니까?</p>`).then((result) => {
 		if (result) {
 			fn_createSaveBtn();
@@ -99,7 +101,7 @@ $('#reviewerInfoCard').on('click', '.modBtn', function() {
 			modalAlert("수정이 취소되었습니다.");
 		}
 	});
-});
+});*/
 
 $('#userAgreeCard').on('change', '#checkAgree', function() {
 	if ($("#checkAgree").is(':checked')) {
@@ -117,77 +119,61 @@ $('#userAgreeCard').on('change', '#checkAgree', function() {
 	}
 });
 
-$("#intermediateSave").click(function (){
+/*$("#intermediateSave").click(function (){
 	
 	modalAlert("저장되었습니다.");
 })
-
+*/
 $("#eventParticipation").click(function (){
-	
-	const $userNm = $("#reviewer");
-	const $userTelNum = $("#reviewerPhoneNum");
-	const $userEmlAddr = $("#reviewerEmail");
-	const $postNum = $("#reviewPostCode");
-	const $userAddr = $("#reviewAddress");
-	const $detailAddr = $("#reviewDetailAddress");
+	const $input = $("#reviewerInfoCard input");
 	const $review = $("#reviewWrite");
-	/*
-	if(!$userNm.val().trim()){
-		modalAlert("이름을 작성해주세요.");
-		$userNm.focus();
+	
+	if(!fn_validation($input)){
+		modalAlert("참여자 정보를 모두 기입해 주세요.");
+		return;
 	}
 	
-	if(!$userTelNum.val()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$userTelNum.focus();
-	}
-	
-	if(!$userEmlAddr.val().trim()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$userEmlAddr.focus();
-	}
-	
-	if(!$postNum.val().trim()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$postNum.focus();
-	}
-	
-	if(!$userAddr.val().trim()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$userAddr.focus();
-	}
-	
-	if(!$detailAddr.val().trim()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$detailAddr.focus();
-	}
-	
-	if(!$review.val().trim()){
-		modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		$review.focus();
-	}
-	*/
-	modalConfirm("작성된 내용을 바탕으로 리뷰 이벤트에 참여 하시겠습니까?").then((result) => {
-		if (result) {
-			let data = {
-				memberDto : {
-					userNm : $userNm.val().trim(),
-					userTelNum: $userTelNum.val(),
-					userEmlAddr : $userEmlAddr.val().trim(),
-					postNum : $postNum.val().trim(),
-					userAddr : $userAddr.val().trim(),
-					detailAddr : $detailAddr.val().trim()
-				},
-				reviewDto : {
-					review : $review.val().trim()
+	if($review.val().trim() == ""){
+		modalAlert("리뷰를 작성해 주세요.");
+	}else{
+		modalConfirm("작성된 내용을 바탕으로 리뷰 이벤트에 참여 하시겠습니까?").then((result) => {
+			if (result) {
+				let	data = {
+						memberDto : {
+							userNm : $input[0].value.trim(),
+							userTelNum: $input[1].value.trim(),
+							userEmlAddr : $input[2].value.trim(),
+							postNum : $input[3].value.trim(),
+							userAddr : $input[4].value.trim(),
+							detailAddr : $input[5].value.trim()
+						},
+						reviewDto : {
+							review : $review.val().trim()
+						}
+				};
+				fn_post("review-event/attend-event", data);
+				for(let i=0; $input.length > i; i++){
+					$input[i].value = "";
 				}
-			};
-			fn_post("review-event/attend-event", data);
-		}else{
-			modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
-		}
-	});
+				$review.val("");
+			}else{
+				modalAlert("리뷰 이벤트 참여를 취소하였습니다.");
+			}
+		});
+	}
+
 })
+
+function fn_validation($input){
+	for(let i=0; $input.length > i; i++){
+		if($input[i].value.trim() == "") {
+			return false;
+		}
+	}
+	return true;
+}
+
+$("#findPostCodeBtn").on("click", fn_callAddressApi);
 
 $("#reviewer").on("input", function () {
 	let reviewer = $("#reviewer").val();
